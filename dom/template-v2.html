@@ -1,0 +1,20 @@
+<script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{title}}</p>
+    <p>{{saudacao()}}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Template'
+        },
+        methods:{
+            saudacao: function(){
+                return 'Boa noite'
+            }
+        }
+    })
+</script>

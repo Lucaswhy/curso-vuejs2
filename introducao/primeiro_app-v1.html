@@ -1,14 +1,23 @@
 <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<div id ="app">
-<p><h1>{{titulo}}</h1></p>
+<div id="app">
+    <input type="text" v-on:input="altTitle">
+    <p>
+    <h1>{{title}}</h1>
+    </p>
 </div>
+
 
 <script>
     new Vue({
         el: '#app',
         data: {
-            titulo: 'Usando Vuejs 2!'
+            title: 'Usando Vuejs 2!'
+        },
+        methods: {
+            altTitle(event) {
+                this.title = event.target.value;
+            }
         }
     })
 </script>
