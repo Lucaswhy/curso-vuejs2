@@ -1,0 +1,38 @@
+<script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{contador}}</p>
+    <button v-on:click="addOne(5,$event)">Somar 1</button>
+    <p v-on:mousemove="addOneMouse">
+        Mouse: {{ x }} and {{ y }}
+    <span v-on:mousemove.stop.prevent>Stop here</span>
+    </p>
+    <a v-on:click="prevNav" href="google.com">Google</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x:0,
+            y:0,
+        },
+        methods:{
+            addOne(count,event){
+                console.log(count,event);
+                this.contador +=count;
+            },
+            addOneMouse(event){
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            prevNav(event){
+                event.preventDefault();
+            },
+            stop(e){
+                e.stopPropagation();
+            }
+        }
+    })
+</script>
