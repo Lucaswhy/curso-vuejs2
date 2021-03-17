@@ -1,0 +1,33 @@
+<script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{title}}</p>
+    <button v-on:click="growUp">Grow</button>
+    <button v-on:click="count2++">Grow 2</button>
+    <button v-on:click="growDown">Down</button>
+    <p>Count: {{count}} | {{count2}} </p>
+    <p>Result:{{result}}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+            count2: 0
+        },
+        computed: {
+            result(){
+                return (this.count >= 5 ? 'Larger or equal a 5': "Less than four 5");
+            }
+        },
+        methods: {
+            growUp(){
+                this.count ++;
+            },
+            growDown(){
+                this.count --;
+            },
+        }
+    })
+</script>

@@ -1,0 +1,23 @@
+<script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{contador * 2}}</p>
+    <p>{{1 + 1 *(100-50)}}</p>
+    <p>{{contador > 10? "2x Maior do que 10" : "2x Menor do que 10"}}</p>
+    <button v-on:click="addOne(5,$event)">Somar 1</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods:{
+            addOne(count,event){
+                console.log(count,event);
+                this.contador ++;
+            },
+        }
+    })
+</script>
