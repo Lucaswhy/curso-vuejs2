@@ -1,0 +1,45 @@
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    .box {
+        display: flex;
+        justify-content: space-around;
+    }
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color:black;
+    }
+
+</style>
+
+<div id="app">
+    <div class="box">
+        <div class="demo":style="{'background-color': color}"></div>
+        <div class="demo" :style="[myStyle,{height:alt}]"></div>
+        <div class="demo"></div>
+    </div>
+    <hr>
+    <input type="text" v-model="color">
+    <input type="text" v-model="size">
+    <input type="text" v-model="alt">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            color: 'red',
+            size: 100,
+            alt: 20
+        },
+        computed:{
+            myStyle(){
+                return{
+                    backgroundColor: this.color,
+                    width:`${this.size}px`
+                }
+            }
+        }
+    })
+</script>
