@@ -1,0 +1,67 @@
+.container-bar {
+    border: 1px solid gray;
+    font-family: 'Calibri';
+    font-size: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+}
+
+.container-button{
+    border: 1px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+    margin-top: 5%;
+}
+
+.container-log{
+    border: 1px solid gray;
+    position: static;
+    margin-top: 5%;
+    height: 20%;
+}
+
+.player_bar{
+    border: 1px solid black;
+    background-color: rgb(61, 180, 61);
+    height: 30px;
+    width: 500px;
+    grid-column-start: 1;
+}
+
+.monster_bar{
+    border: 1px solid black;
+    background-color: rgb(61, 180, 61);
+    height: 30px;
+    width: 500px;
+    grid-column-start: 2;
+}
+
+.atk{
+border: none;
+background-color: crimson;
+color: white;
+height: 50px;
+}
+
+.sp_atk{
+border: none;    
+background-color: orange;
+height: 50px;
+}
+
+.heal{
+border: none;
+background-color: green;
+color: white;
+height: 50px;
+}
+
+.ff{
+border: none;
+background-color: grey;
+height: 50px;
+}
