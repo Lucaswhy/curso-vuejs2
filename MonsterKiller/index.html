@@ -3,37 +3,67 @@
 <script src="https://unpkg.com/vue"></script>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monster Killer</title>
 </head>
+
 <body>
-    
+
     <div id="app">
-        
+
         <div class="container-bar">
-            Player <div class="player_bar"></div> 
-            Monster <div class="monster_bar"></div>
-        </div>
-        <div class="container-button">
-            <button class="atk">Attack</button>
-            <button class="sp_atk">Special Attack</button>
-            <button class="heal">Heal</button>
-            <button class="ff">Surrender</button>
+
+            <div class="person-container">
+                <span>Player</span>
+                <div class="player_bar"></div> {{pLife}}%
+            </div>
+
+            <div class="person-container">
+                <span>Monster</span>
+                <div class="monster_bar"></div> {{mLife}}%
+            </div>
+
         </div>
 
-        <div class="container-log">
-            Test message
-            Test message
+        <div v-if="statusGame == null || statusGame == 0">
+            <span v-if="endGame == true && statusGame == 0"> Oh, you has give up! Wanna try again?</span>
+            <button class="ff" @click="startGame"> Start</button>
+        </div>
+
+        <div v-else-if="statusGame == 2">
+            <span>You won that game! =)</span>
+            <button class="ff" @click="startGame">New game</button>
+        </div>
+
+        <div v-else-if="statusGame == 3">
+            <span>You lost the game! =(</span>
+            <button class="atk" @click="startGame"> Try again</button>
+        </div>
+
+
+        <div v-else class="container-button">
+            <button class="atk" @click="playerAttack">Attack</button>
+            <button class="sp_atk" @click="playerSpAttack">Special Attack</button>
+            <button class="heal" @click="playerHeal">Heal</button>
+            <button class="ff" @click="surrender">Surrender</button>
+        </div>
+
+        <div v-if="mLife != 100 || pLife != 100" class="container-log">
+            <div v-for="l in logList">
+                {{l}}
+            </div>
         </div>
 
     </div>
 
 
-    
-    
+
+
+
 </body>
 <script src="app.js"></script>
 

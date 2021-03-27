@@ -1,10 +1,11 @@
 .container-bar {
     border: 1px solid gray;
     font-family: 'Calibri';
-    font-size: 28px;
+    font-size: 32px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 50px;
+    justify-items: center;
 }
 
 .container-button{
@@ -14,14 +15,21 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     justify-items: center;
-    margin-top: 5%;
+    margin-top: 40px;
+}
+
+.person-container{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .container-log{
     border: 1px solid gray;
     position: static;
-    margin-top: 5%;
-    height: 20%;
+    margin-top: 20px;
+    height: 50px;
+    text-align: center;
 }
 
 .player_bar{
@@ -41,27 +49,48 @@
 }
 
 .atk{
-border: none;
-background-color: crimson;
-color: white;
-height: 50px;
+    border: none;
+    background-color: crimson;
+    color: white;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .sp_atk{
-border: none;    
-background-color: orange;
-height: 50px;
+    border: none;    
+    background-color: orange;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .heal{
-border: none;
-background-color: green;
-color: white;
-height: 50px;
+    border: none;
+    background-color: green;
+    color: white;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .ff{
-border: none;
-background-color: grey;
-height: 50px;
+    border: none;
+    background-color: grey;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
 }
