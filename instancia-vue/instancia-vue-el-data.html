@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app1">
+    {{title}}
+    <button @click="alt">!</button>
+</div>
+
+<script>
+   const vm = new Vue({
+        el: '#app1',
+        data: {
+            title: 'Title_1'
+        },
+        methods: {
+            alt(){
+                this.title += '!'
+            }
+        }
+    })
+
+</script>
