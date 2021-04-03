@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app1">
+    <count1></count1>
+    <count1></count1>
+    <count1></count1>
+</div>
+<hr>
+<div id="app2">
+    <count2></count2>
+</div>
+
+<script>
+    // Global
+    const count = {
+        template:`
+        <div>
+            <span>{{count}}</span>
+            <button @click="count++">+</button>
+            <button @click="count--">-</button>
+        </div>`,
+        data(){
+            return{
+            count: 0
+            }
+        }
+    }
+
+    new Vue({
+        el:'#app1',
+        components: {
+            count1: count
+        }
+    })
+
+    new Vue({
+        el:'#app2',
+        components: {
+            count2: count
+        }
+    })
+</script>
