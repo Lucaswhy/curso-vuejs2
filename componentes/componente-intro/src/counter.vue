@@ -1,5 +1,6 @@
 <template>
   <div class="count">
+      <h1>Counter</h1>
       <span>{{count}}</span>
       <button @click="add">+</button>
       <button @click="subtract">-</button>
@@ -24,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .count span{
         border-bottom: 1px solid #ccc;
         height: 30px;
