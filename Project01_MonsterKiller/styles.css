@@ -1,0 +1,127 @@
+.container-bar {
+    border: 1px solid gray;
+    font-family: 'Calibri';
+    font-size: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+    justify-items: center;
+}
+
+.container-button{
+    border: 1px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.person-container{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.container-log{
+    border: 1px solid gray;
+    position: static;
+    margin-top: 20px;
+    height: 50px;
+    text-align: center;
+}
+
+.container-start{
+    text-align: center;
+}
+
+.container-rules{
+    border: 1px solid white;
+    width: 400px;
+    height: 600px;
+}
+
+.player_bar{
+    border: 1px solid black;
+    width: 500px;
+    height: 30px;
+    grid-column-start: 1;
+}
+
+.monster_bar{
+    border: 1px solid black;
+    height: 30px;
+    width: 500px;
+    grid-column-start: 2;
+}
+
+.atk{
+    border: none;
+    background-color: crimson;
+    color: white;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.sp_atk{
+    border: none;    
+    background-color: orange;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.heal{
+    border: none;
+    background-color: green;
+    color: white;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.ff{
+    border: none;
+    background-color: grey;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.game{
+    border: none;
+    background-color: rgb(33, 105, 240);
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.rules_message{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+
+span,p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: white;
+}
+
+body{
+    background-color: #121212;
+}
