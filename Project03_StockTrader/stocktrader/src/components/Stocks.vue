@@ -53,6 +53,7 @@ export default {
       const total = item.price * (this.quantity[item.id]);
 
       if (this.$store.state.userMoney < total) return alert('Você não tem dinheiro o suficiente para comprar essa quantidade de ações.'); // eslint-disable-line
+      if (this.quantity[item.id] <= 0) return alert('Por favor informe uma quantidade de ações maior que 0.'); // eslint-disable-line
 
       this.calcMoney(total);
       const uStock = {

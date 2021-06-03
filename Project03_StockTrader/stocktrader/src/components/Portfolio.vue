@@ -11,7 +11,7 @@
         <p>
           Total: {{u.quantity}} Comprado por: {{u.price | money}}
         </p>
-        <input class="w-50" type="number" v-model="quantity"/>
+        <input class="w-50" type="number" v-model="quantity[u.id]"/>
         <button class="btn btn-secondary btn-sm float-end" @click="sell(u)">Vender</button>
       </div>
     </div>
@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      quantity: 0,
+      quantity: [],
     };
   },
   computed: {
@@ -32,21 +32,26 @@ export default {
   },
   methods: {
     sell(item) {
-      const total = item.price * (this.quantity);
       let id = 0;
       this.$store.state.userStock.forEach((i, index) => { // eslint-disable-line
         if (item.name === i.name) {
           id = index;
         }
       });
+      const total = parseFloat(this.$store.state.stock[item.id].price) * (this.quantity[item.id]);
+      const userQuantity = parseInt(this.$store.state.userStock[id].quantity, 10);
+      if (this.quantity[item.id] <= 0) {
+        alert('Por favor informe uma quantidade de ações maior que 0.');
+        return 0;
+      }
 
-      if (this.$store.state.userStock[id].quantity < this.quantity) {
+      if (userQuantity < parseInt(this.quantity[item.id], 10)) {
         alert('Você não possui essa quantidade de ações.');
         return 0;
       }
-      if (this.$store.state.userStock[id].quantity > this.quantity) {
-        this.$store.state.userStock[id].quantity = parseInt(this.$store.state.userStock[id].quantity, 10) - parseInt(this.quantity, 10); // eslint-disable-line
-        this.$store.state.userStock[id].totalPrice = parseFloat(total);
+      if (userQuantity > parseInt(this.quantity[item.id], 10)) {
+        this.$store.state.userStock[id].quantity = parseInt(userQuantity, 10) - parseInt(this.quantity[item.id], 10); // eslint-disable-line
+        this.$store.state.userStock[id].totalPrice -= parseFloat(total);
       } else {
         let count = 0;
         this.$store.state.userStock = this.$store.state.userStock.filter((i) => i !== item);
