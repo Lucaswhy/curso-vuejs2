@@ -65,8 +65,7 @@ export default {
     margin-left: auto;
 }
 .ul__img{
-    margin-left: 5px;
     width: 200px;
-    height: 50px;
+    height: auto;
 }
 </style>

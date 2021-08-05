@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="div__card">
     <div class="card ms-2 mt-2" style="width: 18rem" v-for="s in stock" :key="s.id">
       <div class="card-body text-center">
         <h5 class="card-title">{{s.initial}}</h5>
@@ -72,8 +72,8 @@ export default {
 </script>
 
 <style>
-.div--card{
-  font-size: 25px;
-  font-family: Montserrat;
+.div__card{
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
